@@ -1,0 +1,17 @@
+body{
+    text-align: center;
+}
+table{
+    border-collapse: collapse;
+    border:1px dashed red;
+}
+tr:nth-child(even){
+    background-color: red;
+}
+tr{
+    border-radius: 10px;
+}
+img {
+    width:300px;
+    height:100px;
+}

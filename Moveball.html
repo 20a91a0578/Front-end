@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Move the Ball with Arrow Keys</title>
+    <style>
+      #ball {
+        position: absolute;
+        top: 25%;
+        left: 40%;
+        width: 50px;
+        height: 50px;
+        background-color: rgb(195, 108, 20);
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+   <div style="border:1px solid black;height: 500px;width:1200px ;margin-left:150px;background-color: rgb(2, 2, 61);border-radius: 10px;">
+    <div id="ball">                        
+        
+    </div>
+   </div>
+    <script>
+      const ball = document.getElementById("ball");
+      let ballTop = ball.offsetTop;
+      let ballLeft = ball.offsetLeft;
+
+      function moveBall(event) {
+        switch (event.key) {
+          case "w":
+            if(-10<=ballTop&&ballTop<=10)
+            ball.style.top="12px";
+            else
+            {
+            ballTop -= 10;
+            ball.style.top = ballTop + "px";
+            }
+            console.log(ball.style.top);
+            break;
+          case "s":
+            if(ballTop>=455)
+            {
+                ball.style.top="455px";
+            }
+           else{
+            ballTop += 10;
+            ball.style.top = ballTop + "px";
+           }
+            break;
+          case "a":
+          if(ballLeft<=150)
+            ball.style.left="161px";
+            else{
+            ballLeft -= 10;
+            ball.style.left = ballLeft + "px";
+            }
+            break;
+          case "d":
+            if(ballLeft>=(1158+150))
+            ball.style.left="1308px";
+            else{
+            ballLeft += 10;
+            ball.style.left = ballLeft + "px";
+            console.log(ballLeft);
+            }
+            break;
+        }
+      }
+
+      window.addEventListener("keydown", moveBall);
+    </script>
+  
+  </body>
+</html>
